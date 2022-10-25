@@ -1,6 +1,5 @@
 import { CardElement, useElements, useStripe, Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
 import Button from "./elements/Button";
@@ -17,7 +16,6 @@ export const StripeWrapper = () => {
 const PaymentForm = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    const dispatch = useDispatch();
     const navigate = useNavigate();
     const elements = useElements();
     const stripe = useStripe();

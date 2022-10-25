@@ -18,7 +18,4 @@ export function userSlice(state = initialState, action) {
     }
 }
 
-// Action creators are generated for each case reducer function
-//export const { increment, decrement, incrementByAmount } = userSlice.actions
-
 export default userSlice

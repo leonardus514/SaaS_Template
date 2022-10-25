@@ -21,7 +21,6 @@ const Register = () => {
         createUserWithEmailAndPassword(authentication, data.email, data.password)
             .then((response) => {
                 uid = response.user.uid;
-                console.log(uid);
                 sessionStorage.setItem('User Id', uid);
                 sessionStorage.setItem('Auth token', response._tokenResponse.refreshToken);
                 window.dispatchEvent(new Event("storage"));
@@ -34,8 +33,6 @@ const Register = () => {
                 }
             })
             
-            //setTimeout(function(){
-                //console.log(uid)
         const createUserinMongoDB = () => {    
             fetch('http://localhost:8080/api/create-user', {
                 method: 'POST',

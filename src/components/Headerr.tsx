@@ -140,7 +140,6 @@ export function Headerr({ cartCount }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const isLogin = useSelector((state: RootState) => state.user.isLogin)
-  //console.log('isLogin ',isLogin);
 
   const handleLogout = () => {
       sessionStorage.removeItem('Auth token');

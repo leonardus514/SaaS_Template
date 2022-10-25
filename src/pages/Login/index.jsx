@@ -7,16 +7,13 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useDispatch } from 'react-redux'
-//import { decrement, increment } from '../../stores/userInfo/userSlice'
 
 const Login = () => {
     let navigate = useNavigate();
     const { register, handleSubmit } = useForm();
     const [loading, setLoading] = useState(false);
 
-    //const isLogin = useSelector((state) => state.login.isLogin)
     const dispatch = useDispatch();
-    //console.log('isLogin ',isLogin);
 
     const onSubmit = (data) => {
         setLoading(true);
@@ -26,8 +23,6 @@ const Login = () => {
             .then((response) => {
                 uid = response.user.uid;
                 sessionStorage.setItem('User Id', uid);
-                console.log(response);
-                console.log(response._tokenResponse);
                 sessionStorage.setItem('Auth token', response._tokenResponse.refreshToken)
                 window.dispatchEvent(new Event("storage"))
                 dispatch({ type: 'SET_LOGIN_SUCCESS' })

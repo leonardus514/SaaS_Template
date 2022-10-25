@@ -8,3 +8,5 @@
 - Authentifizierung (Registrieren, Login) läuft mit Firebase, es gibt aber auch ne MongoDB Anbindung
 - React Redux wird benutzt
 - Stripe Bezahlfunktion ist noch nicht fertig
+- Frontend ist in src
+- Backend ist in server
